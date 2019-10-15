@@ -6,6 +6,7 @@ const query = (sql,params = []) => {
             if(error){
                 reject({msg:'error',error})   
             }else{
+                console.log()
                 resolve({msg:'success',data}) 
             }
         })
