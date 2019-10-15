@@ -1,12 +1,12 @@
 const connect = require('./index');
 
-const query = (sql) => {
+const query = (sql,params = []) => {
     return new Promise((resolve,reject) => {
-        connect.query(sql,(error,data) => {
+        connect.query(sql,params,(error,data) => {
             if(error){
-                reject(error)   
+                reject({msg:'error',error})   
             }else{
-                resolve(data) 
+                resolve({msg:'success',data}) 
             }
         })
     })
